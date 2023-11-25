@@ -26,7 +26,7 @@ def alert_mail(EMAIL_ADDR : str = None, EMAIL_PASSWORD : str = None, author : st
 
         smtp.quit()
 
-        print(f"Success Searching -  {datetime.datetime.now()} ")
+        print(f"Success Send Mail -  {datetime.datetime.now()} ")
     except:
-        print(f"Failure -   {datetime.datetime.now()}")
+        print(f"Failure Send Mail -   {datetime.datetime.now()}")
 

@@ -21,7 +21,7 @@ def main(*args):
 
         with open('author_material.json', 'w') as f:
             f.write(json_data)
-            logging.info(f"Add Material Info of author : {author_name}")
+            logging.info(f"Add Material Info of new author : {author_name}")
 
     else:
         with open('author_material.json', 'r') as file:
@@ -32,7 +32,7 @@ def main(*args):
                 json_data = json.dumps(author_info, indent=4)
                 with open('author_material.json', 'w') as f:
                     f.write(json_data)
-                    logging.info(f"Add Material Info of author : {author_name}")
+                    logging.info(f"Add Material Info of new author : {author_name}")
             
             else:
                 if author_info[author_name]['num_of_paper'] != author_name_paper_number:
@@ -56,9 +56,9 @@ if __name__ == "__main__":
     EMAIL_PASSWORD = getpass.getpass("please enter your gmail password : ")
 
 
-    job = schedule.every(30).seconds.do(main, author_name, EMAIL_ADDR, EMAIL_PASSWORD)
+    # job = schedule.every(30).seconds.do(main, author_name, EMAIL_ADDR, EMAIL_PASSWORD)
 
-    # job = schedule.every().day.at("00:00").do(main, author_name)
+    job = schedule.every().day.at("00:42").do(main, author_name, EMAIL_ADDR, EMAIL_PASSWORD)
     
     while True:
         schedule.run_pending()
