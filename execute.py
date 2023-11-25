@@ -83,9 +83,10 @@ if __name__ == "__main__":
 
 
     # arxiv_connect(req_authors, EMAIL_ADDR, EMAIL_PASSWORD)
-    # job = schedule.every().day.at("02:00").do(arxiv_connect, req_authors, EMAIL_ADDR, EMAIL_PASSWORD)
+    job = schedule.every().day.at("02:00").do(arxiv_connect, req_authors, EMAIL_ADDR, EMAIL_PASSWORD)
 
-    job = schedule.every(10).seconds.do(arxiv_connect, req_authors, EMAIL_ADDR, EMAIL_PASSWORD)
+    # 테스트 해보고 싶으면 아래 job을 활성화 시키세요!
+    # job = schedule.every(10).seconds.do(arxiv_connect, req_authors, EMAIL_ADDR, EMAIL_PASSWORD)
     
     while True:
         schedule.run_pending()
