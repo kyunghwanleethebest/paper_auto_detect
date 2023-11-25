@@ -2,16 +2,10 @@
 
 ## How to use
 
-1-1. Clone the repository
+1. Clone the repository
 
 ```cmd
 git clone https://github.com/kyunghwanleethebest/paper_auto_detect.git
-```
-
-1-2. Make Screen
-
-```cmd
-screen -S test
 ```
 
 
@@ -50,6 +44,3 @@ Put author name in the file execute.py variable **"author_name"**
 
 Put g_mail id & pwd on the command line.
 
-
-
-6. escape from screen (Ctrl + a , d)
